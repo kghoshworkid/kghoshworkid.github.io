@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kunal Ghosh — Cybersecurity & Identity</title>
+<meta name="description" content="Kunal Ghosh — Senior Manager, Product Management II at Samsung Research America (Knox Research). Cybersecurity, identity and access management, on-device threat defense.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F7F8FA;
+    --surface:#FFFFFF;
+    --ink:#14181F;
+    --muted:#5B6675;
+    --faint:#8A94A3;
+    --line:#E4E7EC;
+    --accent:#354AA6;
+    --accent-soft:#EDEFF9;
+    --maxw:760px;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"Inter",system-ui,-apple-system,sans-serif;
+    font-size:16px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:72px 28px 96px;
+  }
+
+  /* ---- header ---- */
+  header{
+    border-bottom:1px solid var(--line);
+    padding-bottom:36px;
+    margin-bottom:44px;
+  }
+  .id-string{
+    font-family:"JetBrains Mono",monospace;
+    font-size:12px;
+    letter-spacing:0.02em;
+    color:var(--accent);
+    margin:0 0 18px;
+    word-spacing:0.05em;
+  }
+  .id-string .sep{color:var(--faint);padding:0 6px;}
+  h1{
+    font-family:"Space Grotesk",sans-serif;
+    font-weight:700;
+    font-size:clamp(34px,6vw,46px);
+    line-height:1.05;
+    letter-spacing:-0.02em;
+    margin:0 0 14px;
+  }
+  .role{
+    font-size:17px;
+    color:var(--muted);
+    margin:0 0 4px;
+    font-weight:500;
+  }
+  .role strong{color:var(--ink);font-weight:600;}
+  .place{
+    font-size:15px;
+    color:var(--faint);
+    margin:0;
+  }
+
+  /* ---- link row ---- */
+  .links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:26px;
+  }
+  .links a{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    font-family:"JetBrains Mono",monospace;
+    font-size:12.5px;
+    text-decoration:none;
+    color:var(--ink);
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:7px;
+    padding:8px 13px;
+    transition:border-color .15s ease, color .15s ease, transform .15s ease;
+  }
+  .links a:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px);}
+  .links a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+  .links a .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);flex:none;}
+
+  /* ---- sections ---- */
+  section{margin-bottom:44px;}
+  .eyebrow{
+    font-family:"JetBrains Mono",monospace;
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:0.14em;
+    color:var(--faint);
+    margin:0 0 16px;
+  }
+  .bio p{margin:0;font-size:16.5px;color:#2B313B;}
+
+  /* ---- expertise chips ---- */
+  .chips{display:flex;flex-wrap:wrap;gap:9px;}
+  .chip{
+    font-size:13.5px;
+    color:var(--accent);
+    background:var(--accent-soft);
+    border-radius:6px;
+    padding:6px 12px;
+    font-weight:500;
+  }
+
+  /* ---- work list ---- */
+  .work{list-style:none;margin:0;padding:0;}
+  .work li{
+    padding:18px 0;
+    border-top:1px solid var(--line);
+    display:grid;
+    grid-template-columns:1fr;
+    gap:4px;
+  }
+  .work li:first-child{border-top:none;padding-top:0;}
+  .work .w-title{font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:16.5px;}
+  .work .w-desc{color:var(--muted);font-size:15px;}
+
+  /* ---- service ---- */
+  .service{list-style:none;margin:0;padding:0;}
+  .service li{
+    padding-left:20px;
+    position:relative;
+    margin-bottom:10px;
+    color:#2B313B;
+    font-size:15.5px;
+  }
+  .service li::before{
+    content:"";
+    position:absolute;
+    left:0;top:10px;
+    width:7px;height:7px;
+    border:1.5px solid var(--accent);
+    border-radius:2px;
+  }
+  .service .muted{color:var(--faint);font-size:14px;}
+
+  /* ---- footer ---- */
+  footer{
+    border-top:1px solid var(--line);
+    padding-top:28px;
+    margin-top:8px;
+    font-family:"JetBrains Mono",monospace;
+    font-size:12px;
+    color:var(--faint);
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    gap:12px;
+  }
+  footer a{color:var(--muted);text-decoration:none;}
+  footer a:hover{color:var(--accent);}
+
+  /* ---- entrance ---- */
+  .fade{opacity:0;transform:translateY(8px);animation:rise .6s ease forwards;}
+  .fade:nth-child(2){animation-delay:.05s;}
+  header .fade{animation-delay:0s;}
+  @keyframes rise{to{opacity:1;transform:none;}}
+  @media (prefers-reduced-motion:reduce){
+    .fade{animation:none;opacity:1;transform:none;}
+    .links a{transition:none;}
+  }
+
+  @media (max-width:560px){
+    .wrap{padding:52px 22px 72px;}
+    .id-string{font-size:11px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <p class="id-string fade">cybersecurity<span class="sep">/</span>identity &amp; access management<span class="sep">/</span>on-device threat defense</p>
+    <h1 class="fade">Kunal Ghosh</h1>
+    <p class="role fade"><strong>Senior Manager, Product Management II</strong> — Samsung Research America</p>
+    <p class="place fade">Knox Research · Bay Area, California</p>
+    <div class="links fade">
+      <a href="https://orcid.org/0009-0007-4602-5624"><span class="dot"></span>ORCID</a>
+      <a href="https://www.linkedin.com/in/YOUR-HANDLE"><span class="dot"></span>LinkedIn</a>
+      <a href="mailto:your.professional@email.com"><span class="dot"></span>Email</a>
+    </div>
+  </header>
+
+  <section class="bio">
+    <p class="eyebrow">About</p>
+    <p>Kunal Ghosh is a Senior Manager, Product Management II at Samsung Research America (Knox Research), with nearly a decade of experience in cybersecurity. His work spans on-device threat defense — including phishing protection and dropper detection — identity and access management (IAM), and biometric authentication for consumer devices. He is the named owner of shipped OEM security features, having delivered capabilities such as device compliance sharing with identity providers (IdPs) and Universal Logout. He leads technical tracks across Samsung Account for Business, on-device threat detection, and enterprise identity. His current interests extend to AI governance and agentic identity — how access-control and trust frameworks evolve for autonomous, AI-driven systems.</p>
+  </section>
+
+  <section>
+    <p class="eyebrow">Focus areas</p>
+    <div class="chips">
+      <span class="chip">On-device threat defense</span>
+      <span class="chip">Identity &amp; access management</span>
+      <span class="chip">Phishing protection</span>
+      <span class="chip">Dropper &amp; malware detection</span>
+      <span class="chip">Biometric authentication</span>
+      <span class="chip">Enterprise identity</span>
+      <span class="chip">Agentic identity</span>
+      <span class="chip">AI governance</span>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">Selected work</p>
+    <ul class="work">
+      <li>
+        <span class="w-title">Device compliance sharing with identity providers</span>
+        <span class="w-desc">Signals device posture to IdPs so access decisions can factor real-time compliance — bridging on-device security state and enterprise identity.</span>
+      </li>
+      <li>
+        <span class="w-title">Universal Logout</span>
+        <span class="w-desc">Coordinated session termination across services, aligned with the Shared Signals / CAEP direction for revoking access when risk changes.</span>
+      </li>
+      <li>
+        <span class="w-title">On-device threat defense — phishing &amp; dropper detection</span>
+        <span class="w-desc">OEM-integrated protection that detects phishing and dropper behavior locally on the device, without offloading user data.</span>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <p class="eyebrow">Affiliations &amp; service</p>
+    <ul class="service">
+      <li>Member, IEEE</li>
+      <li>Member, IEEE Consumer Technology Society</li>
+      <li>Member, IEEE Biometrics Council</li>
+      <li>Member, Technical Community on Security &amp; Privacy, IEEE Computer Society</li>
+      <li>Open to peer review in security, identity, and consumer-electronics venues <span class="muted">· ORCID-linked</span></li>
+    </ul>
+  </section>
+
+  <footer>
+    <span>Kunal Ghosh · Bay Area, CA</span>
+    <span><a href="https://orcid.org/0009-0007-4602-5624">orcid.org/0009-0007-4602-5624</a></span>
+  </footer>
+
+</div>
+</body>
+</html>
